@@ -1,0 +1,24 @@
+name: Weekly actions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * 5' # every friday AM 8:00
+permissions:
+  contents: write
+jobs:
+  nuget:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '3.0.100'
+    - run: dotnet restore
+    # - uses: MeilCli/nuget-update-check-action@v4
+    #   id: outdated
+    - name: update packages
+      uses: Bchir/update-nuget@V1.0.0
+      with:
+        searchFor: 'outdated'
+        versionToSelect: 'latest'
