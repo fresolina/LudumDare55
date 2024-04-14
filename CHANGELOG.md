@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0 (2024-04-14)
+
+
+### Features
+
+* Rotating cube ([7b6e53f](https://github.com/fresolina/LudumDare55/commit/7b6e53fb0376baab7cb6c07c89f171d86c315bdc))
+
+
+### Bug Fixes
+
+* Make project 2D ([f106e15](https://github.com/fresolina/LudumDare55/commit/f106e1526a4ce484e04f0ca4965a7ed170201e2b))
+
 ## [1.1.3](https://github.com/fresolina/prototype-ludum-test/compare/v1.1.2...v1.1.3) (2024-04-13)
 
 
