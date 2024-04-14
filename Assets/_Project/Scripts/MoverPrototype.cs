@@ -8,10 +8,12 @@ public class MoverPrototype : MonoBehaviour {
 
     private Vector3 collisionDirection = Vector3.zero;
     private bool stuck = false;
-    private SpriteRenderer _renderer;
+    // private SpriteRenderer _renderer;
+    private Animator _animator;
 
     public void Start() {
-        _renderer = GetComponent<SpriteRenderer>();
+        // _renderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     public void Update() {
@@ -33,15 +35,21 @@ public class MoverPrototype : MonoBehaviour {
     }
 
     public void CastTurnLeft() {
-        if (collisionDirection != Vector3.left && !stuck)
+        if (collisionDirection != Vector3.left && !stuck) {
             direction = Vector3.left;
-        _renderer.flipX = false;
+            _animator.enabled = true;
+        }
+        transform.parent.localScale = new Vector3(1, 1, 1);
+        //_renderer.flipX = false;
     }
 
     public void CastTurnRight() {
-        if (collisionDirection != Vector3.right && !stuck)
+        if (collisionDirection != Vector3.right && !stuck) {
             direction = Vector3.right;
-        _renderer.flipX = true;
+            _animator.enabled = true;
+        }
+        // _renderer.flipX = true;
+        transform.parent.localScale = new Vector3(-1, 1, 1);
     }
 
     public void CastUnsummon() {
@@ -50,9 +58,12 @@ public class MoverPrototype : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other) {
         // print("Collision triggered!");
-        if (direction == Vector3.zero)
+        if (direction == Vector3.zero) {
             stuck = true;
+            CastUnsummon();
+        }
         collisionDirection = direction;
         direction = Vector3.zero;
+        _animator.enabled = false;
     }
 }
