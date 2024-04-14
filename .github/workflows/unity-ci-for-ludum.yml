@@ -1,11 +1,14 @@
 name: Build and Deploy to Itch.io
 
-on: push
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     name: Build my project ✨
     runs-on: ubuntu-latest
+    concurrency:
+      group: unity-build
+      cancel-in-progress: true
     steps:
       # Checkout
       - name: Checkout repository
