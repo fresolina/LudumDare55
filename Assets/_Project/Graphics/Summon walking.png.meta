@@ -118,7 +118,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +160,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,7 +286,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,7 +307,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,7 +328,7 @@ TextureImporter:
         width: 100
         height: 110
       alignment: 9
-      pivot: {x: 0.49, y: 0.2727273}
+      pivot: {x: 0.49, y: 0.2181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,6 +336,195 @@ TextureImporter:
       bones: []
       spriteID: 057bbdd069f441b428fda356efd7c78b
       internalID: 1146503202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_11
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94963c254727abb7a8b96a6e05cefde1
+      internalID: 784369995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e74f1756a6be9ff498163d2e8cca6cc
+      internalID: -1340422421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_13
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbaa7e163ab06cb67b84da6f094e93c6
+      internalID: -496656725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af907d03057871b65b49567fda3fbd45
+      internalID: 860336558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518bbccdbd9813b04b47a20d703b7eb5
+      internalID: 1739155193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73ad6ad9b6959d5ba2cd9ed4bd2488b
+      internalID: -785008468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_17
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f154f0680649ef5af6e2ec9d21e575
+      internalID: 1841507859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_18
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6f0c072283d0d21ad27e09efd28873
+      internalID: -740520507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon walking_19
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 0
+        width: 100
+        height: 110
+      alignment: 9
+      pivot: {x: 0.49, y: 0.2181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ac8804e6620040aab812dada4a0bbd
+      internalID: 1240762440
       vertices: []
       indices: 
       edges: []
@@ -354,6 +543,15 @@ TextureImporter:
       Summon walking_0: -1264314805
       Summon walking_1: 1690434917
       Summon walking_10: 1146503202
+      Summon walking_11: 784369995
+      Summon walking_12: -1340422421
+      Summon walking_13: -496656725
+      Summon walking_14: 860336558
+      Summon walking_15: 1739155193
+      Summon walking_16: -785008468
+      Summon walking_17: 1841507859
+      Summon walking_18: -740520507
+      Summon walking_19: 1240762440
       Summon walking_2: 1608245748
       Summon walking_3: 1584847618
       Summon walking_4: 2017038399
