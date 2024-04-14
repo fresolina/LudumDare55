@@ -62,6 +62,7 @@ public class MoveCannonController : MonoBehaviour {
 
     // FIXME?
     public void CastUnsummon() {
-        CastShoot();
+        _cannon.Unsummon();
+        //CastShoot();
     }
 }

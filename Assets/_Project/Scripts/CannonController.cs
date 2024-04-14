@@ -11,6 +11,7 @@ public class CannonController : MonoBehaviour {
     AudioSource _audioSource;
 
     private bool fired;
+    private bool can_fire = true;
 
     public void Start() {
         summon = transform.Find("Summon").gameObject;
@@ -38,6 +39,11 @@ public class CannonController : MonoBehaviour {
 
     // Call manually to trigger unsummoning animation
     public void Unsummon() {
+        if (!fired) {
+            var player = ball.GetComponent<Player>();
+            player.SetHidden(false);
+        }
+        can_fire = false;
         summon.SetActive(false);
         main.SetActive(false);
         unsummon.SetActive(true);
@@ -52,7 +58,7 @@ public class CannonController : MonoBehaviour {
     }
 
     public void Shoot(Vector2 direction) {
-        if (fired) {
+        if (fired || !can_fire) {
             return;
         }
         var player = ball.GetComponent<Player>();
@@ -60,8 +66,6 @@ public class CannonController : MonoBehaviour {
         ball.GetComponentInChildren<Player>().Shoot(direction);
         _audioSource.Play();
         fired = true;
-
-        // Force unsummon after a while TODO: replace with animation
-        Invoke("UnsummonEnd", 1.0f);
+        Invoke("Unsummon", 1.0f);
     }
 }
