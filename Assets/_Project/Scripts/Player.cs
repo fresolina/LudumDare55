@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     }
 
     public bool IsHidden() {
-        return !_spriteRenderer.enabled;
+        return !gameObject.activeSelf;
     }
 
     public void SummonWalking() {
