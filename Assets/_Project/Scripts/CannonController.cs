@@ -8,11 +8,13 @@ public class CannonController : MonoBehaviour {
     private GameObject unsummon;
 
     private GameObject ball;
+    AudioSource _audioSource;
 
     public void Start() {
         summon = transform.Find("Summon").gameObject;
         main = transform.Find("Control").gameObject;
         unsummon = transform.Find("Unsummon").gameObject;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void Update() {
@@ -51,5 +53,6 @@ public class CannonController : MonoBehaviour {
         var player = ball.GetComponent<Player>();
         player.SetHidden(false);
         ball.GetComponentInChildren<Player>().Shoot(direction);
+        _audioSource.Play();
     }
 }
