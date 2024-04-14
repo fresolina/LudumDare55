@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
         _rigidbody.AddForce(direction, ForceMode2D.Impulse);
     }
 
-    void SummonWalking() {
+    public void SummonWalking() {
         Vector2 position = transform.position;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
         gameObject.SetActive(false);

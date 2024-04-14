@@ -501,6 +501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kula
       objectReference: {fileID: 0}
+    - target: {fileID: 3980970569336325326, guid: d5d7c2062b5cca14eb08264b5f96965b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
