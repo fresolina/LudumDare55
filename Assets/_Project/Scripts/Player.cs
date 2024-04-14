@@ -22,10 +22,6 @@ public class Player : MonoBehaviour {
         return !_spriteRenderer.enabled;
     }
 
-    public bool IsHidden() {
-        return !_spriteRenderer.enabled;
-    }
-
     public void SummonWalking() {
         Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
