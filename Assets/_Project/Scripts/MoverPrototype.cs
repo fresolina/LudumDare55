@@ -8,11 +8,11 @@ public class MoverPrototype : MonoBehaviour {
 
     private Vector3 collisionDirection = Vector3.zero;
     private bool stuck = false;
-    // private SpriteRenderer _renderer;
+
     private Animator _animator;
 
+
     public void Start() {
-        // _renderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
     }
 
@@ -21,7 +21,25 @@ public class MoverPrototype : MonoBehaviour {
 
         if (direction != Vector3.zero) {
             collisionDirection = Vector3.zero;
-            stuck = false;
+        }
+
+        // Force walking if needed to get unstuck
+        if (stuck) {
+            var hit = StuckestDirection();
+            if (hit.collider == null) {
+                stuck = false;
+                OnTriggerEnter2D(null);
+            } else {
+                if (hit.point.x >= transform.parent.position.x) {
+                    direction = Vector3.left;
+                    transform.parent.localScale = new Vector3(1, 1, 1);
+                    _animator.enabled = true;
+                } else {
+                    direction = Vector3.right;
+                    transform.parent.localScale = new Vector3(-1, 1, 1);
+                    _animator.enabled = true;
+                }
+            }
         }
 
         // TODO: disable dev cheatcodes (?)
@@ -31,6 +49,27 @@ public class MoverPrototype : MonoBehaviour {
             CastTurnRight();
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
             CastUnsummon();
+        }
+    }
+
+    public RaycastHit2D StuckestDirection() {
+        // raycast left and right and find the direction with the closest distance
+        var origin = transform.parent.position;
+        var left = Physics2D.Raycast(origin, Vector2.left, 2.0f);
+        var right = Physics2D.Raycast(origin, Vector2.right, 2.0f);
+
+        if (left.collider != null) {
+            if (right.collider != null) {
+                if (left.distance < right.distance) {
+                    return left;
+                } else {
+                    return right;
+                }
+            } else {
+                return left;
+            }
+        } else {
+            return right;
         }
     }
 
@@ -58,11 +97,13 @@ public class MoverPrototype : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other) {
         // print("Collision triggered!");
-        if (direction == Vector3.zero) {
-            stuck = true;
-            CastUnsummon();
+        stuck = direction == Vector3.zero;
+        if (other != null) {
+            collisionDirection = direction;
+        } else {
+            collisionDirection = Vector3.zero;
         }
-        collisionDirection = direction;
+
         direction = Vector3.zero;
         _animator.enabled = false;
     }
