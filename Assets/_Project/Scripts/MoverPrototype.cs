@@ -8,6 +8,11 @@ public class MoverPrototype : MonoBehaviour {
 
     private Vector3 collisionDirection = Vector3.zero;
     private bool stuck = false;
+    private SpriteRenderer _renderer;
+
+    public void Start() {
+        _renderer = GetComponent<SpriteRenderer>();
+    }
 
     public void Update() {
         transform.parent.position += direction * speed * Time.deltaTime;
@@ -30,11 +35,13 @@ public class MoverPrototype : MonoBehaviour {
     public void CastTurnLeft() {
         if (collisionDirection != Vector3.left && !stuck)
             direction = Vector3.left;
+        _renderer.flipX = false;
     }
 
     public void CastTurnRight() {
         if (collisionDirection != Vector3.right && !stuck)
             direction = Vector3.right;
+        _renderer.flipX = true;
     }
 
     public void CastUnsummon() {
