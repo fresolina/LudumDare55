@@ -3,12 +3,12 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField] GameObject _summonWalkingPrefab;
 
-    CircleCollider2D _collider;
     Rigidbody2D _rigidbody;
+    SpriteRenderer _spriteRenderer;
 
     void Awake() {
-        _collider = GetComponent<CircleCollider2D>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponentInChildren<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update() {
@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
             Move(direction);
         }
 
+        // Debug inputs
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             SummonWalking();
         }
@@ -28,10 +29,18 @@ public class Player : MonoBehaviour {
         _rigidbody.AddForce(direction, ForceMode2D.Impulse);
     }
 
-    void SummonWalking() {
-        Vector2 position = transform.position;
+    public void SetHidden(bool hidden) {
+        if (hidden) {
+            _spriteRenderer.enabled = false;
+        } else {
+            _spriteRenderer.enabled = true;
+        }
+    }
+
+    public void SummonWalking() {
+        Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
-        gameObject.SetActive(false);
+        SetHidden(true);
     }
 
 }
