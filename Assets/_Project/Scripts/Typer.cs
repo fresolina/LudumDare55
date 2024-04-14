@@ -36,8 +36,13 @@ public class Typer : MonoBehaviour {
                     TypeEvent?.Invoke(TypeField.text);
                     */
             } else if ((c >= 'a' && c <= 'z') || c == '-') {
-                TypeField.text += Char.ToUpper(c);
-                TypeEvent?.Invoke(TypeField.text);
+                if (TypeField.text.Length < 6) {
+                    TypeField.text += Char.ToUpper(c);
+                    TypeEvent?.Invoke(TypeField.text);
+                } else {
+                    // Overcast
+                    Reset();
+                }
             }
         }
     }

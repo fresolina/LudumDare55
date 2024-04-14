@@ -27,10 +27,6 @@ public class SpellIndicator : MonoBehaviour {
         display.text = spell;
     }
 
-    // Update is called once per frame
-    void Update() {
-    }
-
     void OnTypeEvent(string text) {
         // If this spell starts with the text, highlight it in the field.
         // Otherwise clear all hightlights.
@@ -39,9 +35,13 @@ public class SpellIndicator : MonoBehaviour {
 
             var spellToCast = GetComponentInParent<Spell>();
             var follower = GetComponentInParent<ObjectUIFollower>();
-            print("Spell complete: spell = " + spellToCast + ", follower = " + follower + " target = " + follower.target);
+            print("Spell complete: spell = " + spellToCast + ", follower = " + follower + " target = " + follower?.target);
             if (follower != null && spellToCast != null) {
                 spellToCast.Cast(follower.target.gameObject);
+            } else if (spellToCast != null) {
+                spellToCast.Cast(null);
+            } else {
+                Debug.Log("SpellIndicator: No spell to cast!");
             }
 
             typer.Reset();
