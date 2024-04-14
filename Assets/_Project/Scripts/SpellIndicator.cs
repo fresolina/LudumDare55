@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class SpellIndicator : MonoBehaviour {
-    public Typer typer;
+    private static Typer typer;
 
     public int length = 6;
 
@@ -13,6 +13,9 @@ public class SpellIndicator : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        if (typer == null)
+            typer = FindObjectOfType<Typer>();
+
         typer.TypeEvent += OnTypeEvent;
         display = GetComponent<TMP_Text>();
 
@@ -34,7 +37,12 @@ public class SpellIndicator : MonoBehaviour {
         if (spell == text) {
             display.text = "<u><size=120%><color=\"green\">" + text + "</color></size></u>";
 
-            Debug.Log("Spell complete: " + spell);
+            var spellToCast = GetComponentInParent<Spell>();
+            var follower = GetComponentInParent<ObjectUIFollower>();
+            print("Spell complete: spell = " + spellToCast + ", follower = " + follower + " target = " + follower.target);
+            if (follower != null && spellToCast != null) {
+                spellToCast.Cast(follower.target.gameObject);
+            }
 
             typer.Reset();
             Randomize();
