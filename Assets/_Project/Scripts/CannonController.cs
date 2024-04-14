@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class CannonController : MonoBehaviour {
 
     public void Update() {
         // FIXME debug
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Alpha0)) {
             Unsummon();
         }
     }
@@ -44,11 +45,11 @@ public class CannonController : MonoBehaviour {
         main.SetActive(false);
         unsummon.SetActive(false);
         Destroy(gameObject);
+    }
 
-        if (ball != null) {
-            var player = ball.GetComponent<Player>();
-            player.SetPosition(transform.position);
-            player.SetHidden(false);
-        }
+    public void Shoot(Vector2 direction) {
+        var player = ball.GetComponent<Player>();
+        player.SetHidden(false);
+        ball.GetComponentInChildren<Player>().Shoot(direction);
     }
 }

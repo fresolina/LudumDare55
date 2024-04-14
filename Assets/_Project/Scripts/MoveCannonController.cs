@@ -6,6 +6,13 @@ public class MoveCannonController : MonoBehaviour {
     CannonController _cannon;
     SpriteRenderer _spriteRenderer;
     int _currentSpriteIndex = 0;
+    Vector2[] _shootDirection = {
+        Vector2.left,
+        new Vector2(-Mathf.Cos(22.5f * Mathf.Deg2Rad), Mathf.Sin(22.5f * Mathf.Deg2Rad)),
+        new Vector2(-Mathf.Cos(45f * Mathf.Deg2Rad), Mathf.Sin(45f * Mathf.Deg2Rad)),
+        new Vector2(-Mathf.Cos(67.5f * Mathf.Deg2Rad), Mathf.Sin(67.5f * Mathf.Deg2Rad)),
+        Vector2.up
+    };
 
     void Awake() {
         _cannon = GetComponentInParent<CannonController>();
@@ -38,6 +45,6 @@ public class MoveCannonController : MonoBehaviour {
     }
 
     public void CastShoot() {
-
+        _cannon.Shoot(_shootDirection[_currentSpriteIndex] * 10f);
     }
 }

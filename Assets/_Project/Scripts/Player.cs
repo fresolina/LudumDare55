@@ -16,6 +16,10 @@ public class Player : MonoBehaviour {
         _rigidbody.AddForce(direction, ForceMode2D.Impulse);
     }
 
+    public void Shoot(Vector2 direction) {
+        _rigidbody.AddForce(direction, ForceMode2D.Impulse);
+    }
+
     public void SetHidden(bool hidden) {
         gameObject.SetActive(!hidden);
     }
