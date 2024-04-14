@@ -7,7 +7,15 @@ public class MoverPrototype : MonoBehaviour {
     private Vector3 direction = Vector3.zero;
 
     public void Update() {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.parent.position += direction * speed * Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            CastTurnLeft();
+        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            CastTurnRight();
+        } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            CastDesummon();
+        }
     }
 
     public void CastTurnLeft() {

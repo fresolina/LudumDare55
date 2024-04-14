@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e6057a4bc586b43a00908214b196bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _summonWalkingPrefab: {fileID: 40935300152192458, guid: 36f995a30eb71844cb8374a3e79ce421, type: 3}
+  _summonWalkingPrefab: {fileID: 493844198788244202, guid: 51cdfd1e464510ab89e739c476f9246b, type: 3}
 --- !u!1 &6534571284434334661
 GameObject:
   m_ObjectHideFlags: 0
