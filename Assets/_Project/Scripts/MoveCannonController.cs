@@ -47,4 +47,9 @@ public class MoveCannonController : MonoBehaviour {
     public void CastShoot() {
         _cannon.Shoot(_shootDirection[_currentSpriteIndex] * 10f);
     }
+
+    // FIXME?
+    public void CastUnsummon() {
+        CastShoot();
+    }
 }

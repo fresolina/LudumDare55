@@ -11,6 +11,5 @@ public class Unsummon : Spell {
 
     public override void Cast(GameObject target = null) {
         target.BroadcastMessage("CastUnsummon");
-        // Destroy(target);
     }
 }
