@@ -10,6 +10,8 @@ public class CannonController : MonoBehaviour {
     private GameObject ball;
     AudioSource _audioSource;
 
+    private bool fired;
+
     public void Start() {
         summon = transform.Find("Summon").gameObject;
         main = transform.Find("Control").gameObject;
@@ -50,9 +52,16 @@ public class CannonController : MonoBehaviour {
     }
 
     public void Shoot(Vector2 direction) {
+        if (fired) {
+            return;
+        }
         var player = ball.GetComponent<Player>();
         player.SetHidden(false);
         ball.GetComponentInChildren<Player>().Shoot(direction);
         _audioSource.Play();
+        fired = true;
+
+        // Force unsummon after a while TODO: replace with animation
+        Invoke("UnsummonEnd", 1.0f);
     }
 }
