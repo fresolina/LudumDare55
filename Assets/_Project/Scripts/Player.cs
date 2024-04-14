@@ -29,4 +29,14 @@ public class Player : MonoBehaviour {
         SetHidden(true);
     }
 
+    public Vector3 GetPosition() {
+        return _spriteRenderer.transform.position;
+    }
+
+    public void SetPosition(Vector3 position) {
+        // TODO: reset rigidbody state (velocity etc)
+        _rigidbody.transform.position = position;
+        _spriteRenderer.transform.position = position;
+    }
+
 }

@@ -43,11 +43,12 @@ public class CarrierController : MonoBehaviour {
         summon.SetActive(false);
         main.SetActive(false);
         unsummon.SetActive(false);
-
-        // TODO bring back ball stuff
-
         Destroy(gameObject);
-        if (ball != null)
-            ball.GetComponent<Player>().SetHidden(false);
+
+        if (ball != null) {
+            var player = ball.GetComponent<Player>();
+            player.SetPosition(transform.position);
+            player.SetHidden(false);
+        }
     }
 }
