@@ -10,7 +10,7 @@ public class SpellMaker {
         // http://www.lexique.org/shiny/unipseudo/
         var asset = Resources.Load<TextAsset>("words_" + len);
         spells[len] = new List<string>();
-        foreach (string line in asset.text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries)) {
+        foreach (string line in asset.text.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)) {
             spells[len].Add(line.ToUpper());
         }
 
