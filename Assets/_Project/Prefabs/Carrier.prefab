@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 311153855262594239}
   - component: {fileID: 1047638485102608618}
   - component: {fileID: 2100498517341760361}
+  - component: {fileID: 1424688241602110630}
   m_Layer: 0
   m_Name: Control
   m_TagString: Untagged
@@ -347,6 +348,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1424688241602110630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321537935189197072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18185d3f60435424e98e7ef0cb1e9141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 28ec043e3d7452940b1512bf66d7e1c3, type: 3}
+  - {fileID: 8300000, guid: 3be6b7217ba0dac43842c457009af13c, type: 3}
+  - {fileID: 8300000, guid: a96a6b57b10149b4daa44df30f1c4870, type: 3}
+  - {fileID: 8300000, guid: 37e780691350d1c46a139b1a7799144c, type: 3}
+  - {fileID: 8300000, guid: 4848ca1e2bd82c443a156672e3179249, type: 3}
+  - {fileID: 8300000, guid: e8e3078abe01da0438ec70d35dc7a9e7, type: 3}
+  - {fileID: 8300000, guid: 1703c5ca9ee4842458421058bc2c0e7e, type: 3}
+  - {fileID: 8300000, guid: 67323cfd711bb564d9d717a236a4a7eb, type: 3}
+  - {fileID: 8300000, guid: 024200af59d543845a5487db9e4c318c, type: 3}
 --- !u!1 &2987277487558022011
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,10 +485,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2987277487558022011}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01352800ea349f048ab645520654a9d3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47dea006e677c5f419b50eaeb4f60e7a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -681,7 +704,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01352800ea349f048ab645520654a9d3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47dea006e677c5f419b50eaeb4f60e7a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
