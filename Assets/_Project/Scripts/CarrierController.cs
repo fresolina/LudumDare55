@@ -16,7 +16,7 @@ public class CarrierController : MonoBehaviour {
 
     public void Update() {
         // FIXME debug
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Alpha0)) {
             Unsummon();
         }
     }

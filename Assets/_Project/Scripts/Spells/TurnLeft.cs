@@ -10,7 +10,6 @@ public class TurnLeft : Spell {
     }
 
     public override void Cast(GameObject target = null) {
-        print("Cast Desummon on " + target);
         target.BroadcastMessage("CastTurnLeft");
     }
 }
