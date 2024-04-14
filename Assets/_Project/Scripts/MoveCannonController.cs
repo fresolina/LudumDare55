@@ -25,6 +25,10 @@ public class MoveCannonController : MonoBehaviour {
             CastTurnUp();
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
             CastTurnDown();
+        } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            CastTurnLeft();
+        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            CastTurnRight();
         } else if (Input.GetKeyDown(KeyCode.Space)) {
             CastShoot();
         }
@@ -44,8 +48,16 @@ public class MoveCannonController : MonoBehaviour {
         _spriteRenderer.sprite = _sprites[_currentSpriteIndex];
     }
 
+    public void CastTurnLeft() {
+        transform.parent.localScale = new Vector3(1, 1, 1);
+    }
+    public void CastTurnRight() {
+        transform.parent.localScale = new Vector3(-1, 1, 1);
+    }
+
     public void CastShoot() {
-        _cannon.Shoot(_shootDirection[_currentSpriteIndex] * 10f);
+        var dir = new Vector2(transform.parent.localScale.x, 1f);
+        _cannon.Shoot(_shootDirection[_currentSpriteIndex] * 10f * dir);
     }
 
     // FIXME?
