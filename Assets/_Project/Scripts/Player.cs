@@ -28,7 +28,14 @@ public class Player : MonoBehaviour {
         return !gameObject.activeSelf;
     }
 
+    // FIXME: This is sooo quick and dirty
+    public bool IsGrounded() {
+        return Math.Abs(_rigidbody.velocity.y) < 0.00001f;
+    }
+
     public void SummonWalking() {
+        if (!IsGrounded())
+            return;
         Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
         anim.GetComponent<CarrierController>().SetBall(gameObject);
@@ -36,6 +43,8 @@ public class Player : MonoBehaviour {
     }
 
     public void SummonCannon() {
+        if (!IsGrounded())
+            return;
         Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonCannonPrefab, position, Quaternion.identity);
         anim.GetComponent<CannonController>().SetBall(gameObject);
