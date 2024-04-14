@@ -596,6 +596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 3766115767114429771, guid: 46c2df2a1c0892243a7f0ac59fbb2eb7, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5906679244879369432, guid: 46c2df2a1c0892243a7f0ac59fbb2eb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6
