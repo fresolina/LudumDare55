@@ -20,7 +20,7 @@ public class SummonCarriers : Spell {
     public override void Cast(GameObject target = null) {
         // print("Cast SummonCarriers on " + player);
         if (player != null && player.activeInHierarchy) {
-            var controller = player.GetComponent<Player>();
+            var controller = player.GetComponentInChildren<Player>();
             if (!controller.IsHidden())
                 controller.SummonWalking();
         }
