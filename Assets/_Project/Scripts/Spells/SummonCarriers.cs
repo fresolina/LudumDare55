@@ -21,7 +21,7 @@ public class SummonCarriers : Spell {
         // print("Cast SummonCarriers on " + player);
         if (player != null && player.activeInHierarchy) {
             var controller = player.GetComponentInChildren<Player>();
-            if (!controller.IsHidden())
+            if (controller && !controller.IsHidden())
                 controller.SummonWalking();
         }
     }
