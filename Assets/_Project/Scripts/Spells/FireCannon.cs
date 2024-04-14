@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class TurnCannonUp : Spell {
+public class FireCannon : Spell {
     public Sprite icon;
 
     public override Sprite Icon() {
@@ -10,7 +10,7 @@ public class TurnCannonUp : Spell {
     }
 
     public override void Cast(GameObject target = null) {
-        //print("Cast TurnCannonUp on " + target);
-        target.BroadcastMessage("CastTurnUp");
+        // print("Cast TurnCannonUp on " + target);
+        target.BroadcastMessage("CastShoot");
     }
 }

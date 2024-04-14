@@ -10,8 +10,8 @@ public class TurnCannonDown : Spell {
     }
 
     public override void Cast(GameObject target = null) {
-        print("Cast TurnCannonUp on " + target);
+        //print("Cast TurnCannonUp on " + target);
 
-        target.BroadcastMessage("CastTurnCannonUp");
+        target.BroadcastMessage("CastTurnDown");
     }
 }
