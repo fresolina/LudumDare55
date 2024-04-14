@@ -14,7 +14,7 @@ public class MoverPrototype : MonoBehaviour {
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             CastTurnRight();
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            CastDesummon();
+            CastUnsummon();
         }
     }
 
@@ -26,7 +26,7 @@ public class MoverPrototype : MonoBehaviour {
         direction = Vector3.right;
     }
 
-    public void CastDesummon() {
-        direction = Vector3.zero;
+    public void CastUnsummon() {
+        GetComponentInParent<CarrierController>().Unsummon();
     }
 }

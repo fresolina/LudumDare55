@@ -10,17 +10,11 @@ public class SpellList : MonoBehaviour {
     void Start() {
         var y = 0.0f;
 
+        // TODO hack this better
         var follower = GetComponent<ObjectUIFollower>();
         if (follower != null) {
-            var target = follower.target;
-            if (target != null) {
-                var renderer = target.GetComponent<Renderer>();
-                if (renderer != null) {
-                    // "/ 2.0" because pivot is in middle
-                    // "* 32.0" because 1 unit = 32 pixels (can maybe be read from sprite)
-                    y = renderer.bounds.size.y / 2.0f * 32.0f;
-                }
-            }
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(follower.target.position);
+            GetComponent<RectTransform>().position = screenPos + follower.offset;
         }
 
         foreach (var spell in spells) {
@@ -40,5 +34,8 @@ public class SpellList : MonoBehaviour {
             // Ugly way to connect spell class
             entry.gameObject.AddComponent(spell.GetType()); ;
         }
+
+        // Move ourselves to the canvas
+        transform.SetParent(GameObject.Find("Canvas").transform, false);
     }
 }

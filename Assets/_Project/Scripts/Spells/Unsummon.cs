@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Desummon : Spell {
+public class Unsummon : Spell {
     public Sprite icon;
 
     public override Sprite Icon() {
@@ -10,7 +10,7 @@ public class Desummon : Spell {
     }
 
     public override void Cast(GameObject target = null) {
-        target.BroadcastMessage("CastDesummon");
+        target.BroadcastMessage("CastUnsummon");
         // Destroy(target);
     }
 }

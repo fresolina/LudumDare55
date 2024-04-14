@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5891804459311162352}
   - component: {fileID: 3929981120418299981}
   m_Layer: 5
-  m_Name: MoverSpellList
+  m_Name: CarrierSpellList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  offset: {x: 40, y: 40, z: 0}
 --- !u!114 &3929981120418299981
 MonoBehaviour:
   m_ObjectHideFlags: 0
