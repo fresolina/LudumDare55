@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
         }
 
         // Debug inputs
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !IsHidden()) {
             SummonWalking();
         }
     }
@@ -37,9 +37,14 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public bool IsHidden() {
+        return !_spriteRenderer.enabled;
+    }
+
     public void SummonWalking() {
         Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
+        anim.GetComponent<CarrierController>().SetBall(gameObject);
         SetHidden(true);
     }
 

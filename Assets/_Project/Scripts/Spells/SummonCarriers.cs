@@ -14,14 +14,15 @@ public class SummonCarriers : Spell {
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
-            Debug.LogError("Player tagged object not found");
+            Debug.Log("Player tagged object not found");
     }
 
     public override void Cast(GameObject target = null) {
         // print("Cast SummonCarriers on " + player);
         if (player != null && player.activeInHierarchy) {
             var controller = player.GetComponent<Player>();
-            controller.SummonWalking();
+            if (!controller.IsHidden())
+                controller.SummonWalking();
         }
     }
 }
