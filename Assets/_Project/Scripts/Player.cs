@@ -30,7 +30,6 @@ public class Player : MonoBehaviour {
 
     void SummonWalking() {
         Vector2 position = transform.position;
-        position.y += 0.99f;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
         gameObject.SetActive(false);
     }
