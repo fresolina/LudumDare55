@@ -6,11 +6,12 @@ public class SceneLoader : MonoBehaviour {
     [SerializeField] string _startingScene = "Level_1";
 
     void Awake() {
-        if (SceneManager.GetSceneByName("GameOverlayCanvas").IsValid()) {
-            return;
-        }
         // Load the spell pallette canvas when loading a scene
-        SceneManager.LoadScene("GameOverlayCanvas", LoadSceneMode.Additive);
-        SceneManager.LoadScene(_startingScene, LoadSceneMode.Additive);
+        if (!SceneManager.GetSceneByName("GameOverlayCanvas").IsValid()) {
+            SceneManager.LoadScene("GameOverlayCanvas", LoadSceneMode.Additive);
+        }
+        if (!SceneManager.GetSceneByName(_startingScene).IsValid()) {
+            SceneManager.LoadScene(_startingScene, LoadSceneMode.Additive);
+        }
     }
 }
