@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -595,10 +595,6 @@ PrefabInstance:
     - target: {fileID: 3766115767114429771, guid: 46c2df2a1c0892243a7f0ac59fbb2eb7, type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 3766115767114429771, guid: 46c2df2a1c0892243a7f0ac59fbb2eb7, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5906679244879369432, guid: 46c2df2a1c0892243a7f0ac59fbb2eb7, type: 3}
       propertyPath: m_LocalPosition.x

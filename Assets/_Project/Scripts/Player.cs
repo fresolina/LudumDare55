@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
     [SerializeField] GameObject _summonWalkingPrefab;
+    [SerializeField] GameObject _summonCannonPrefab;
 
     Rigidbody2D _rigidbody;
     SpriteRenderer _spriteRenderer;
@@ -26,6 +28,13 @@ public class Player : MonoBehaviour {
         Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonWalkingPrefab, position, Quaternion.identity);
         anim.GetComponent<CarrierController>().SetBall(gameObject);
+        SetHidden(true);
+    }
+
+    public void SummonCannon() {
+        Vector2 position = _spriteRenderer.transform.position;
+        GameObject anim = Instantiate(_summonCannonPrefab, position, Quaternion.identity);
+        anim.GetComponent<CannonController>().SetBall(gameObject);
         SetHidden(true);
     }
 
