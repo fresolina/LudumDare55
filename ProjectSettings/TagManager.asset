@@ -7,6 +7,7 @@ TagManager:
   - Typer
   - Map
   - Canvas
+  - Message
   layers:
   - Default
   - TransparentFX

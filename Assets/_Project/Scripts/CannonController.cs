@@ -21,8 +21,7 @@ public class CannonController : MonoBehaviour {
     }
 
     public void Update() {
-        // FIXME debug
-        if (Input.GetKeyDown(KeyCode.Alpha0)) {
+        if (GameManager.Instance.Cheat() && Input.GetKeyDown(KeyCode.Alpha0)) {
             Unsummon();
         }
     }

@@ -64,8 +64,9 @@ public class MoverPrototype : MonoBehaviour {
 
         _ball.GetComponentInChildren<Player>().SetPosition(transform.parent.position);
 
-        // TODO: disable dev cheatcodes (?)
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        if (!GameManager.Instance.Cheat()) {
+            // Cheat codes disabled
+        } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             CastTurnLeft();
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             CastTurnRight();

@@ -5,6 +5,10 @@ public class PlayerDebugInputController : MonoBehaviour {
     [SerializeField] Player _player;
 
     void Update() {
+        if (!GameManager.Instance.Cheat()) {
+            return;
+        }
+
         // Debug inputs
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             if (_player.gameObject.activeSelf && !_player.IsHidden()) {
