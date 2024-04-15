@@ -1,44 +1,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MoverPrototype : MonoBehaviour {
+    private enum Direction {
+        Left,
+        Right,
+        None,
+    }
 
     public float speed = 1.0f;
     private Vector3 direction = Vector3.zero;
 
-    private Vector3 collisionDirection = Vector3.zero;
+    private Direction collisionDirection = Direction.None;
     private bool stuck = false;
 
     private Animator _animator;
-
+    private Collider2D _collider;
 
     public void Start() {
         _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider2D>();
     }
 
     public void Update() {
         transform.parent.position += direction * speed * Time.deltaTime;
 
         if (direction != Vector3.zero) {
-            collisionDirection = Vector3.zero;
+            collisionDirection = Direction.None;
         }
 
         // Force walking if needed to get unstuck
         if (stuck) {
-            var hit = StuckestDirection();
-            if (hit.collider == null) {
-                stuck = false;
-                OnTriggerEnter2D(null);
-            } else {
-                if (hit.point.x >= transform.parent.position.x) {
+            var stuckDir = StuckestDirection();
+            if (stuckDir == Direction.None)
+                stuckDir = AbyssDirection();
+
+            switch (stuckDir) {
+                case Direction.None:
+                    stuck = false;
+                    OnTriggerEnter2D(null);
+                    break;
+                case Direction.Right:
                     direction = Vector3.left;
                     transform.parent.localScale = new Vector3(1, 1, 1);
                     _animator.enabled = true;
-                } else {
+                    break;
+                case Direction.Left:
                     direction = Vector3.right;
                     transform.parent.localScale = new Vector3(-1, 1, 1);
                     _animator.enabled = true;
-                }
+                    break;
+            }
+        } else {
+            var abyss = AbyssDirection();
+            if (abyss != Direction.None) {
+                print("Abyss detected!: " + abyss);
+                stuck = true;
             }
         }
 
@@ -52,29 +70,61 @@ public class MoverPrototype : MonoBehaviour {
         }
     }
 
-    public RaycastHit2D StuckestDirection() {
+    private Direction AbyssDirection() {
+        // raycast left down and right down to find if we are hovering above an abyss
+        var bounds = _collider.bounds;
+        var left_corner = new Vector2(bounds.min.x, bounds.min.y + 0.1f);
+        var right_corner = new Vector2(bounds.max.x, bounds.min.y + 0.1f);
+        var left = Physics2D.Raycast(left_corner, Vector2.down, 1.0f);
+        var right = Physics2D.Raycast(right_corner, Vector2.down, 1.0f);
+
+        if (left.collider != null)
+            Debug.DrawLine(left_corner, left.point, Color.red);
+        if (right.collider != null)
+            Debug.DrawLine(right_corner, right.point, Color.red);
+
+        if (left.collider == null) {
+            return Direction.Left;
+        } else if (right.collider == null) {
+            return Direction.Right;
+        } else if (left.distance < 0.20f && right.distance < 0.20f) {
+            return Direction.None;
+        } else if (left.distance > right.distance) {
+            print("Abyss left: " + left.distance + " right: " + right.distance);
+            return Direction.Left;
+        } else {
+            return Direction.Right;
+        }
+    }
+
+    private Direction StuckestDirection() {
         // raycast left and right and find the direction with the closest distance
         var origin = transform.parent.position;
         var left = Physics2D.Raycast(origin, Vector2.left, 2.0f);
         var right = Physics2D.Raycast(origin, Vector2.right, 2.0f);
 
-        if (left.collider != null) {
-            if (right.collider != null) {
-                if (left.distance < right.distance) {
-                    return left;
-                } else {
-                    return right;
-                }
+        if (left.collider != null)
+            Debug.DrawLine(origin, left.point, Color.red);
+        if (right.collider != null)
+            Debug.DrawLine(origin, right.point, Color.red);
+
+        if (left.collider == null && right.collider == null) {
+            return Direction.None;
+        } else if (right.collider != null && left.collider != null) {
+            if (right.distance < left.distance) {
+                return Direction.Right;
             } else {
-                return left;
+                return Direction.Left;
             }
+        } else if (left.collider == null) {
+            return Direction.Right;
         } else {
-            return right;
+            return Direction.Left;
         }
     }
 
     public void CastTurnLeft() {
-        if (collisionDirection != Vector3.left && !stuck) {
+        if (collisionDirection != Direction.Left && !stuck) {
             direction = Vector3.left;
             _animator.enabled = true;
         }
@@ -83,7 +133,7 @@ public class MoverPrototype : MonoBehaviour {
     }
 
     public void CastTurnRight() {
-        if (collisionDirection != Vector3.right && !stuck) {
+        if (collisionDirection != Direction.Right && !stuck) {
             direction = Vector3.right;
             _animator.enabled = true;
         }
@@ -99,9 +149,9 @@ public class MoverPrototype : MonoBehaviour {
         // print("Collision triggered!");
         stuck = direction == Vector3.zero;
         if (other != null) {
-            collisionDirection = direction;
+            collisionDirection = direction.x < 0f ? Direction.Left : Direction.Right;
         } else {
-            collisionDirection = Vector3.zero;
+            collisionDirection = Direction.None;
         }
 
         direction = Vector3.zero;
