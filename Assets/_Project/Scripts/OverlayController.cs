@@ -7,11 +7,18 @@ public class OverlayController : MonoBehaviour {
     private GameObject _completeMessage;
     private GameObject _deadMessage;
 
-    void Start() {
+    private static OverlayController _overlayController;
+
+    void Awake() {
+        _overlayController = this;
         _summonPalette = transform.Find("SummonPalette").gameObject;
         _typeIndicator = transform.Find("TypeIndicator").gameObject;
         _completeMessage = transform.Find("Completed").gameObject;
         _deadMessage = transform.Find("Dead").gameObject;
+    }
+
+    public static OverlayController Instance() {
+        return _overlayController;
     }
 
     public void ShowSummonPalette(bool show) {

@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour {
 
     void Update() {
         if (_target == null) {
-            _target = GameObject.FindWithTag("Player").GetComponentInChildren<Player>();
+            _target = GameObject.FindWithTag("Player")?.GetComponentInChildren<Player>();
         }
 
         if (_map == null) {
