@@ -57,7 +57,7 @@ public class MoveCannonController : MonoBehaviour {
 
     public void CastShoot() {
         var dir = new Vector2(transform.parent.localScale.x, 1f);
-        _cannon.Shoot(_shootDirection[_currentSpriteIndex] * 11f * dir);
+        _cannon.Shoot(_shootDirection[_currentSpriteIndex] * 12f * dir);
     }
 
     // FIXME?
