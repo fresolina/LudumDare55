@@ -81,16 +81,19 @@ public class GameManager : MonoBehaviour {
                 _musicPlayer.PlayGameInProgress();
                 break;
             case GameState.GameWon:
+                _overlay.ClearMessages();
                 _overlay.ShowCompleteMessage(true);
                 delay = _musicPlayer.PlayGameWon().length;
                 Invoke("TimeoutMusicOrAnyKey", delay);
                 break;
             case GameState.GameOver:
+                _overlay.ClearMessages();
                 _overlay.ShowDeadMessage(true);
                 delay = _musicPlayer.PlayGameOver().length;
                 Invoke("TimeoutMusicOrAnyKey", delay);
                 break;
             case GameState.LevelComplete:
+                _overlay.ClearMessages();
                 _overlay.ShowCompleteMessage(true);
                 delay = _musicPlayer.PlayGameWon().length;
                 Invoke("TimeoutMusicOrAnyKey", delay);
@@ -125,6 +128,7 @@ public class GameManager : MonoBehaviour {
         _overlay.ShowDeadMessage(false);
         _overlay.ShowSummonPalette(false);
         _overlay.ShowTypeIndicator(false);
+        _overlay.ClearMessages();
     }
 
     void LoadScene(string sceneName) {

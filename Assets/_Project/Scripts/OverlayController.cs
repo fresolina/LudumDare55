@@ -60,4 +60,10 @@ public class OverlayController : MonoBehaviour {
         }
         return message_obj;
     }
+
+    public void ClearMessages() {
+        foreach (var child in GameObject.FindGameObjectsWithTag("Message")) {
+            Destroy(child.gameObject);
+        }
+    }
 }
