@@ -17,7 +17,7 @@ public class MusicPlayer : MonoBehaviour {
 
     public void PlayTitle() {
         _audioSource.clip = _title;
-        _audioSource.loop = false;
+        _audioSource.loop = true;
         _audioSource.Play();
     }
 
