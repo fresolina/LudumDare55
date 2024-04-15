@@ -613,6 +613,237 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Summon canon_24
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae20c46dd53a3440ba2d0caf8a7b73e
+      internalID: -1953794005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_25
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef342e0d7ca7ef49b547c76cad51743
+      internalID: -39559983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_26
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204c33c451dcfd54aa84af62242a615d
+      internalID: -468610025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_27
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3aeb5b6e0496f64584069a73e7ecce7
+      internalID: 1574058683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_28
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17202f4f849a8374c8a16c4a1351db79
+      internalID: -282960280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_29
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444bc8dbd89edc34d804ee7220f047e1
+      internalID: -4395638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_30
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32084fef91ba08459e23255c26affe3
+      internalID: -1988548551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_31
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10036f963bb1b94cb73726bc11040c5
+      internalID: -1614789073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_32
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe4a6f467f1a1f48aa063959bf5f12c
+      internalID: 1161059615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_33
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510a9dc94a0b5ef4bb9b35ad2b127a0e
+      internalID: 786986160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Summon canon_34
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 0
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.365, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4239c892a4fc0414bbd79383fc119f0a
+      internalID: 968010198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -641,7 +872,18 @@ TextureImporter:
       Summon canon_21: 711995433
       Summon canon_22: -769002341
       Summon canon_23: -475864453
+      Summon canon_24: -1953794005
+      Summon canon_25: -39559983
+      Summon canon_26: -468610025
+      Summon canon_27: 1574058683
+      Summon canon_28: -282960280
+      Summon canon_29: -4395638
       Summon canon_3: 473293634
+      Summon canon_30: -1988548551
+      Summon canon_31: -1614789073
+      Summon canon_32: 1161059615
+      Summon canon_33: 786986160
+      Summon canon_34: 968010198
       Summon canon_4: 1505816673
       Summon canon_5: 772112518
       Summon canon_6: 739022553
