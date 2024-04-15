@@ -216,3 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33041d3da4e146ceea6f6bbef7a5f013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathMusic: {fileID: 8300000, guid: cde479708df75734695234d2c56278ac, type: 3}
