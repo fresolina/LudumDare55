@@ -42,11 +42,13 @@ public class Player : MonoBehaviour {
         SetHidden(true);
     }
 
-    public void SummonCannon() {
+    public void SummonCannon(bool facingRight = false) {
         if (!IsGrounded())
             return;
         Vector2 position = _spriteRenderer.transform.position;
         GameObject anim = Instantiate(_summonCannonPrefab, position, Quaternion.identity);
+        if (facingRight)
+            anim.transform.localScale = new Vector3(-1, 1, 1);
         anim.GetComponent<CannonController>().SetBall(gameObject);
         SetHidden(true);
     }

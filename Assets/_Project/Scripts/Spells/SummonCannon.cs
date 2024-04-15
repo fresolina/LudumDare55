@@ -5,10 +5,14 @@ using UnityEngine;
 public class SummonCannon : Spell {
     public Sprite icon;
 
-    private GameObject player;
+    protected GameObject player;
 
     public override Sprite Icon() {
         return icon;
+    }
+
+    protected virtual bool FlipX() {
+        return false;
     }
 
     void Start() {
@@ -22,7 +26,7 @@ public class SummonCannon : Spell {
         if (player != null && player.activeInHierarchy) {
             var controller = player.GetComponentInChildren<Player>();
             if (controller != null && !controller.IsHidden())
-                controller.SummonCannon();
+                controller.SummonCannon(FlipX());
         }
     }
 }

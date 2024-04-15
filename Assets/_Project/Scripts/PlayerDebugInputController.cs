@@ -20,7 +20,13 @@ public class PlayerDebugInputController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
             if (_player.gameObject.activeSelf && !_player.IsHidden()) {
-                _player.SummonCannon();
+                _player.SummonCannon(false);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            if (_player.gameObject.activeSelf && !_player.IsHidden()) {
+                _player.SummonCannon(true);
             }
         }
     }
