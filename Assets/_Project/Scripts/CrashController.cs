@@ -7,11 +7,13 @@ public class CrashController : MonoBehaviour {
 
     // Called by animation system when crash animation is finished
     public void AnimationEnd() {
-        var overlay = GameObject.FindGameObjectWithTag("Canvas").GetComponent<OverlayController>();
+        GameManager.Instance.SetGameState(GameState.GameOver);
+        // var overlay = GameObject.FindGameObjectWithTag("Canvas").GetComponent<OverlayController>();
 
-        overlay.ShowDeadMessage(true);
-        var source = GetComponent<AudioSource>();
-        if (deathMusic != null)
-            source.PlayOneShot(deathMusic);
+
+        // overlay.ShowDeadMessage(true);
+        // var source = GetComponent<AudioSource>();
+        // if (deathMusic != null)
+        //     source.PlayOneShot(deathMusic);
     }
 }

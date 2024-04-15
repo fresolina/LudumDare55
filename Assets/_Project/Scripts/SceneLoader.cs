@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Superseeded by GameManager.cs
+// DO NOT USE
+[System.Obsolete("Use GameManager.cs instead")]
 public class SceneLoader : MonoBehaviour {
     [SerializeField] string _startingScene = "Tutorial_1";
 
