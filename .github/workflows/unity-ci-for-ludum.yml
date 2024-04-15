@@ -45,6 +45,6 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
-          ITCH_GAME: prototype-test-auto-upload
+          ITCH_GAME: spell-the-spell
           ITCH_USER: umesweden
           PACKAGE: build/WebGL
