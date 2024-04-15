@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour {
 
     void TimeoutMusicOrAnyKey() {
         switch (_gameState) {
-            case GameState.GameWon:
+            case GameState.LevelComplete:
                 _currentLevel++;
                 if (_currentLevel >= _levelNames.Length) {
                     SetGameState(GameState.GameWon);
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour {
             case GameState.GameOver:
                 SetGameState(GameState.Title);
                 break;
-            case GameState.LevelComplete:
+            case GameState.GameWon:
                 SetGameState(GameState.Title);
                 break;
         }
