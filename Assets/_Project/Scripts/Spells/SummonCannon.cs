@@ -18,10 +18,10 @@ public class SummonCannon : Spell {
     }
 
     public override void Cast(GameObject target = null) {
-        print("Cast SummonCannon on " + player);
+        //print("Cast SummonCannon on " + player);
         if (player != null && player.activeInHierarchy) {
             var controller = player.GetComponentInChildren<Player>();
-            if (!controller.IsHidden())
+            if (controller != null && !controller.IsHidden())
                 controller.SummonCannon();
         }
     }
