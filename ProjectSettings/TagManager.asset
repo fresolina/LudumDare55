@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Typer
   - Map
+  - Canvas
   layers:
   - Default
   - TransparentFX
