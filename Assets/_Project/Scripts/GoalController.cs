@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Overlays;
 using UnityEngine;
 
 public class GoalController : MonoBehaviour {
@@ -6,10 +7,12 @@ public class GoalController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.GetComponentInParent<Player>()) {
-            // TODO: play success sound
-            // TODO: show success text
+            OverlayController.Instance().ShowCompleteMessage(true);
+            OverlayController.Instance().ShowSummonPalette(false);
+            MusicPlayer.Instance.PlayGameWon();
+
             // TODO: load next level or win screen
-            print("You win!");
+
             // SceneLoader.Instance.LoadScene(nextLevel);
         }
     }
