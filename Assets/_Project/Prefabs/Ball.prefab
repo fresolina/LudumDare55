@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _summonWalkingPrefab: {fileID: 493844198788244202, guid: 51cdfd1e464510ab89e739c476f9246b, type: 3}
   _summonCannonPrefab: {fileID: 493844198788244202, guid: 112d998c5a2e31e43942cbc1be59686a, type: 3}
+  _crashPrefab: {fileID: 5355944502395045846, guid: b620cc4d8a78f5bd18e93daaf7707dd0, type: 3}
 --- !u!1 &6534571284434334661
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,8 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCollisionSpeed: 11
-  _crashSound: {fileID: 8300000, guid: 21a339e75b3a00742a14a4ad70e71f99, type: 3}
-  _bounceSound: {fileID: 8300000, guid: b26072dd7c248277b9243a053ded49d7, type: 3}
 --- !u!82 &1058127057560267953
 AudioSource:
   m_ObjectHideFlags: 0
@@ -248,9 +247,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b26072dd7c248277b9243a053ded49d7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
