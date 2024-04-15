@@ -703,6 +703,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8976684}
     m_Modifications:
+    - target: {fileID: 585804388811102677, guid: 29d3db401accf9518a4c28ba19518736, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 585804388811102677, guid: 29d3db401accf9518a4c28ba19518736, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8234365302961483936, guid: 29d3db401accf9518a4c28ba19518736, type: 3}
       propertyPath: m_Name
       value: TypeIndicator

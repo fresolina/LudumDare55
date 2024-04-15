@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 184d6d01ae27d0742ad2f9fd969df55d, type: 3}
+    - target: {fileID: 4059040480396301128, guid: 771bf4001a436a9ed816d5a595faa5fb, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     - target: {fileID: 6128846058351095813, guid: 771bf4001a436a9ed816d5a595faa5fb, type: 3}
       propertyPath: m_Name
       value: SummonCannon Variant
