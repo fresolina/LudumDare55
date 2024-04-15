@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
     void Update() {
         switch (_gameState) {
             case GameState.Title:
-                if (Input.anyKey) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
                     SetGameState(GameState.GameInProgress);
                 }
                 break;
