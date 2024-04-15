@@ -21,7 +21,9 @@ public class MoveCannonController : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+        if (!GameManager.Instance.Cheat()) {
+            // Cheat codes disabled
+        } else if (Input.GetKeyDown(KeyCode.UpArrow)) {
             CastTurnUp();
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
             CastTurnDown();

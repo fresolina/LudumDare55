@@ -145,4 +145,9 @@ public class GameManager : MonoBehaviour {
             SceneManager.SetActiveScene(scene);
         }
     }
+
+    // Cheat codes enabled?
+    public bool Cheat() {
+        return false;
+    }
 }
