@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3efa0d2d26c76345b6f2acae026d1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingScene: Level_1
+  _startingScene: Tutorial_1
 --- !u!1001 &2099528071
 PrefabInstance:
   m_ObjectHideFlags: 0

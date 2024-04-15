@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Level_1.unity
     guid: 86951e9b4ad415844817c29d8d364f10
   - enabled: 1
-    path: Assets/_Project/Scenes/GameOverlayCanvas.unity
-    guid: 7c0f6f09a17acc64daa46f95d8cecdfb
+    path: Assets/_Project/Scenes/Tutorial_1.unity
+    guid: 58184e45e72132653bc26636cc7e285d
   m_configObjects: {}

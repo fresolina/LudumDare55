@@ -3,23 +3,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
-    [SerializeField] string _startingScene = "Level_1";
+    [SerializeField] string _startingScene = "Tutorial_1";
 
     private OverlayController _overlay;
 
-    void Awake() {
-        /*
-        // Load the spell pallette canvas when loading a scene
-        if (!SceneManager.GetSceneByName("GameOverlayCanvas").IsValid()) {
-            SceneManager.LoadScene("GameOverlayCanvas", LoadSceneMode.Additive);
-        }
-        */
+    private string _loadingScene;
 
-        if (!SceneManager.GetSceneByName(_startingScene).IsValid()) {
-            SceneManager.LoadScene(_startingScene, LoadSceneMode.Additive);
+    void Awake() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        _loadingScene = _startingScene;
+        if (!SceneManager.GetSceneByName(_loadingScene).IsValid()) {
+            SceneManager.LoadScene(_loadingScene, LoadSceneMode.Additive);
         }
 
         _overlay = GameObject.FindGameObjectWithTag("Canvas").GetComponent<OverlayController>();
         // TODO: set up / hide messages depending on state
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if (scene.name == _loadingScene) {
+            SceneManager.SetActiveScene(scene);
+        }
     }
 }
