@@ -19,7 +19,10 @@ public class CameraController : MonoBehaviour {
         }
 
         if (_map == null) {
-            _map = GameObject.FindWithTag("Map").transform;
+            _map = GameObject.FindWithTag("Map")?.transform;
+            if (_map == null)
+                return;
+
             _bounds = new Bounds();
             foreach (var map in _map.GetComponentsInChildren<Tilemap>()) {
                 map.CompressBounds();
