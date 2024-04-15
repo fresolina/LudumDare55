@@ -17,13 +17,15 @@ public class MusicPlayer : MonoBehaviour {
 
     public void PlayTitle() {
         _audioSource.clip = _title;
-        _audioSource.loop = false;
+        _audioSource.loop = true;
+        _audioSource.volume = 0.8f;
         _audioSource.Play();
     }
 
     public void PlayGameInProgress() {
         _audioSource.clip = _gameInProgress;
         _audioSource.loop = true;
+        _audioSource.volume = 0.1f;
         _audioSource.Play();
     }
 
@@ -32,6 +34,7 @@ public class MusicPlayer : MonoBehaviour {
     public AudioClip PlayGameWon() {
         _audioSource.clip = _gameWon;
         _audioSource.loop = false;
+        _audioSource.volume = 0.2f;
         _audioSource.Play();
         return _gameWon;
     }
@@ -40,6 +43,7 @@ public class MusicPlayer : MonoBehaviour {
     public AudioClip PlayGameOver() {
         _audioSource.clip = _gameOver;
         _audioSource.loop = false;
+        _audioSource.volume = 0.1f;
         _audioSource.Play();
         return _gameOver;
     }
