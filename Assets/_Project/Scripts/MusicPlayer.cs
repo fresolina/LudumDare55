@@ -27,16 +27,21 @@ public class MusicPlayer : MonoBehaviour {
         _audioSource.Play();
     }
 
-    public void PlayGameWon() {
+    // Returns the clip so that the caller can use it for e.g.
+    // clip.length to wait for the clip to finish playing
+    public AudioClip PlayGameWon() {
         _audioSource.clip = _gameWon;
         _audioSource.loop = false;
         _audioSource.Play();
+        return _gameWon;
     }
 
-    public void PlayGameOver() {
+
+    public AudioClip PlayGameOver() {
         _audioSource.clip = _gameOver;
         _audioSource.loop = false;
         _audioSource.Play();
+        return _gameOver;
     }
 
 }

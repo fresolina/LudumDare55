@@ -9,11 +9,16 @@ public class GoalController : MonoBehaviour {
         if (other.GetComponentInParent<Player>()) {
             OverlayController.Instance().ShowCompleteMessage(true);
             OverlayController.Instance().ShowSummonPalette(false);
-            MusicPlayer.Instance.PlayGameWon();
 
-            // TODO: load next level or win screen
-
-            // SceneLoader.Instance.LoadScene(nextLevel);
+            var delay = MusicPlayer.Instance.PlayGameWon().length;
+            Invoke("LoadNextScene", delay);
         }
+    }
+
+    void LoadNextScene() {
+        OverlayController.Instance().ShowCompleteMessage(false);
+
+        // TODO: load next level or win screen
+        // SceneLoader.Instance.LoadScene(nextLevel);
     }
 }
