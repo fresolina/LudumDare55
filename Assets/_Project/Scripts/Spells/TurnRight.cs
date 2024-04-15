@@ -10,7 +10,7 @@ public class TurnRight : Spell {
     }
 
     public override void Cast(GameObject target = null) {
-        print("Cast TurnRight on " + target);
+        //print("Cast TurnRight on " + target);
         target.BroadcastMessage("CastTurnRight");
     }
 }

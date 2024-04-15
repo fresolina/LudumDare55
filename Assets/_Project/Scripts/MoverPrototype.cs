@@ -90,7 +90,7 @@ public class MoverPrototype : MonoBehaviour {
         } else if (left.distance < 0.20f && right.distance < 0.20f) {
             return Direction.None;
         } else if (left.distance > right.distance) {
-            print("Abyss left: " + left.distance + " right: " + right.distance);
+            //print("Abyss left: " + left.distance + " right: " + right.distance);
             return Direction.Left;
         } else {
             return Direction.Right;
