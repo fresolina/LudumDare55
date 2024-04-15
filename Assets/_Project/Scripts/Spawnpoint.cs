@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawnpoint : MonoBehaviour {
     private OverlayController _overlayController;
@@ -22,5 +23,14 @@ public class Spawnpoint : MonoBehaviour {
 
         Instantiate(_prefab, transform.position, Quaternion.identity);
         _audioSource.Play();
+
+        // Ugly level-specific setup
+        OverlayController.Instance().LimitSpells();
+        switch (SceneManager.GetActiveScene().name) {
+            case "Tutorial_1":
+                OverlayController.Instance().LimitSpells(1);
+                OverlayController.Instance().AddMessage("message", "You are trapped and can't move yourself\nSummon your trusty servants for help.\nType their name now!\nThen tell them to carry you left.\nFinally unsummon them when touching the flag.");
+                break;
+        }
     }
 }
