@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Overlays;
 using UnityEngine;
 
 public class Spawnpoint : MonoBehaviour {
@@ -16,6 +15,10 @@ public class Spawnpoint : MonoBehaviour {
         _overlayController.ShowTypeIndicator(true);
         _overlayController.ShowCompleteMessage(false);
         _overlayController.ShowDeadMessage(false);
+
+        var pos = transform.position;
+        pos.z = Camera.main.transform.position.z;
+        Camera.main.transform.position = pos;
 
         Instantiate(_prefab, transform.position, Quaternion.identity);
         _audioSource.Play();
