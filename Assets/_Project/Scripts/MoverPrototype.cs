@@ -17,10 +17,12 @@ public class MoverPrototype : MonoBehaviour {
 
     private Animator _animator;
     private Collider2D _collider;
+    private GameObject _ball;
 
     public void Start() {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<Collider2D>();
+        _ball = transform.parent.GetComponent<CarrierController>().GetBall();
     }
 
     public void Update() {
@@ -59,6 +61,8 @@ public class MoverPrototype : MonoBehaviour {
                 stuck = true;
             }
         }
+
+        _ball.GetComponentInChildren<Player>().SetPosition(transform.parent.position);
 
         // TODO: disable dev cheatcodes (?)
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {

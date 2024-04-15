@@ -25,6 +25,10 @@ public class CarrierController : MonoBehaviour {
         this.ball = ball;
     }
 
+    public GameObject GetBall() {
+        return ball;
+    }
+
     // Called through the animation's event system and the SummonEndController in the Summon object
     public void SummonEnd() {
         summon.SetActive(false);
