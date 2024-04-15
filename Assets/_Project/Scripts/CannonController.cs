@@ -61,9 +61,10 @@ public class CannonController : MonoBehaviour {
         if (fired || !can_fire) {
             return;
         }
-        var player = ball.GetComponent<Player>();
+        var player = ball.GetComponentInChildren<Player>();
         player.SetHidden(false);
-        ball.GetComponentInChildren<Player>().Shoot(direction);
+        player.SetPosition(player.GetPosition() + new Vector3(0.0f, 0.1f, 0.0f));
+        player.Shoot(direction);
         _audioSource.Play();
         fired = true;
         Invoke("Unsummon", 1.0f);

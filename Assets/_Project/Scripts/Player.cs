@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField] GameObject _summonWalkingPrefab;
     [SerializeField] GameObject _summonCannonPrefab;
+    [SerializeField] GameObject _crashPrefab;
 
     Rigidbody2D _rigidbody;
     SpriteRenderer _spriteRenderer;
@@ -63,4 +64,9 @@ public class Player : MonoBehaviour {
         _spriteRenderer.transform.position = position;
     }
 
+    public void Crash() {
+        Vector2 position = _spriteRenderer.transform.position;
+        Instantiate(_crashPrefab, position, Quaternion.identity);
+        SetHidden(true);
+    }
 }

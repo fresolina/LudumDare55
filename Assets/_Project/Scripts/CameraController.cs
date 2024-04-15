@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour {
             _map = GameObject.FindWithTag("Map").transform;
             _bounds = new Bounds();
             foreach (var map in _map.GetComponentsInChildren<Tilemap>()) {
+                map.CompressBounds();
                 var map_bounds = map.localBounds;
                 _bounds.Encapsulate(map_bounds.min);
                 _bounds.Encapsulate(map_bounds.max);
@@ -33,19 +34,23 @@ public class CameraController : MonoBehaviour {
             targetPosition.z = transform.position.z;
 
             if (_map != null) {
-                var viewportCenter = _cam.ViewportToWorldPoint(Vector3.zero);
-                var viewportCorner = _cam.ViewportToWorldPoint(Vector3.one / 2.0f);
-                var viewportMargin = viewportCorner - viewportCenter;
+                var viewportBottomLeft = _cam.ViewportToWorldPoint(Vector3.zero);
+                var viewportUpperRight = _cam.ViewportToWorldPoint(Vector3.one);
+                var viewportMargin = (viewportUpperRight - viewportBottomLeft) / 2f;
 
-                if (targetPosition.x > _bounds.max.x - viewportMargin.x) {
-                    targetPosition.x = _bounds.max.x - viewportMargin.x;
-                } else if (targetPosition.x < _bounds.min.x + viewportMargin.x) {
-                    targetPosition.x = _bounds.min.x + viewportMargin.x;
+                var viewBounds = _bounds;
+                viewBounds.min += viewportMargin;
+                viewBounds.max -= viewportMargin;
+
+                if (targetPosition.x > viewBounds.max.x) {
+                    targetPosition.x = viewBounds.max.x;
+                } else if (targetPosition.x < viewBounds.min.x) {
+                    targetPosition.x = viewBounds.min.x;
                 }
-                if (targetPosition.y > _bounds.max.y - viewportMargin.y) {
-                    targetPosition.y = _bounds.max.y - viewportMargin.y;
-                } else if (targetPosition.y < _bounds.min.y + viewportMargin.y) {
-                    targetPosition.y = _bounds.min.y + viewportMargin.y;
+                if (targetPosition.y > viewBounds.max.y) {
+                    targetPosition.y = viewBounds.max.y;
+                } else if (targetPosition.y < viewBounds.min.y) {
+                    targetPosition.y = viewBounds.min.y;
                 }
             }
 
