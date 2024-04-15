@@ -48,23 +48,18 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.LevelComplete:
                 if (Input.anyKey) {
-                    _currentLevel++;
-                    if (_currentLevel >= _levelNames.Length) {
-                        SetGameState(GameState.GameWon);
-                    } else {
-                        SetGameState(GameState.GameInProgress);
-                    }
+                    TimeoutMusicOrAnyKey();
                 }
                 break;
             case GameState.GameWon:
                 // TODO: show win screen
                 if (Input.anyKey) {
-                    SetGameState(GameState.Title);
+                    TimeoutMusicOrAnyKey();
                 }
                 break;
             case GameState.GameOver:
                 if (Input.anyKey) {
-                    SetGameState(GameState.Title);
+                    TimeoutMusicOrAnyKey();
                 }
                 break;
         }
@@ -73,6 +68,7 @@ public class GameManager : MonoBehaviour {
     public void SetGameState(GameState state) {
         ResetOverlay();
 
+        float delay;
         switch (state) {
             case GameState.Title:
                 _musicPlayer.PlayTitle();
@@ -86,20 +82,42 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.GameWon:
                 _overlay.ShowCompleteMessage(true);
-                _musicPlayer.PlayGameWon();
+                delay = _musicPlayer.PlayGameWon().length;
+                Invoke("TimeoutMusicOrAnyKey", delay);
                 break;
             case GameState.GameOver:
                 _overlay.ShowDeadMessage(true);
-                _musicPlayer.PlayGameOver();
+                delay = _musicPlayer.PlayGameOver().length;
+                Invoke("TimeoutMusicOrAnyKey", delay);
                 break;
             case GameState.LevelComplete:
                 _overlay.ShowCompleteMessage(true);
-                _musicPlayer.PlayGameWon();
+                delay = _musicPlayer.PlayGameWon().length;
+                Invoke("TimeoutMusicOrAnyKey", delay);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(state), state, null);
         }
         _gameState = state;
+    }
+
+    void TimeoutMusicOrAnyKey() {
+        switch (_gameState) {
+            case GameState.GameWon:
+                _currentLevel++;
+                if (_currentLevel >= _levelNames.Length) {
+                    SetGameState(GameState.GameWon);
+                } else {
+                    SetGameState(GameState.GameInProgress);
+                }
+                break;
+            case GameState.GameOver:
+                SetGameState(GameState.Title);
+                break;
+            case GameState.LevelComplete:
+                SetGameState(GameState.Title);
+                break;
+        }
     }
 
     void ResetOverlay() {
