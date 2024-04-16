@@ -52,4 +52,8 @@ public class SpellIndicator : MonoBehaviour {
             display.text = spell;
         }
     }
+
+    void OnDestroy() {
+        typer.TypeEvent -= OnTypeEvent;
+    }
 }
