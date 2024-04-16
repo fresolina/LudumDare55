@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour {
             case GameState.LevelComplete:
                 _currentLevel++;
                 if (_currentLevel >= _levelNames.Length) {
+                    _currentLevel = 0;
                     SetGameState(GameState.GameWon);
                 } else {
                     SetGameState(GameState.GameInProgress);
