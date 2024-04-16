@@ -82,9 +82,7 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.GameWon:
                 _overlay.ClearMessages();
-                _overlay.ShowCompleteMessage(true);
-                delay = _musicPlayer.PlayGameWon().length;
-                Invoke("TimeoutMusicOrAnyKey", delay);
+                _overlay.ShowWinMessage(true);
                 break;
             case GameState.GameOver:
                 _overlay.ClearMessages();
@@ -128,6 +126,7 @@ public class GameManager : MonoBehaviour {
         _overlay.ShowDeadMessage(false);
         _overlay.ShowSummonPalette(false);
         _overlay.ShowTypeIndicator(false);
+        _overlay.ShowWinMessage(false);
         _overlay.ClearMessages();
     }
 

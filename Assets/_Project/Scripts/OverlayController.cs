@@ -7,6 +7,7 @@ public class OverlayController : MonoBehaviour {
     private GameObject _typeIndicator;
     private GameObject _completeMessage;
     private GameObject _deadMessage;
+    private GameObject _winMessage;
 
     private static OverlayController _overlayController;
 
@@ -18,6 +19,7 @@ public class OverlayController : MonoBehaviour {
         _typeIndicator = transform.Find("TypeIndicator").gameObject;
         _completeMessage = transform.Find("Completed").gameObject;
         _deadMessage = transform.Find("Dead").gameObject;
+        _winMessage = transform.Find("Win").gameObject;
     }
 
     public static OverlayController Instance() {
@@ -38,6 +40,10 @@ public class OverlayController : MonoBehaviour {
 
     public void ShowDeadMessage(bool show) {
         _deadMessage.SetActive(show);
+    }
+
+    public void ShowWinMessage(bool show) {
+        _winMessage.SetActive(show);
     }
 
     public void LimitSpells(int count = 666) {
