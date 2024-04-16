@@ -1163,6 +1163,8 @@ MonoBehaviour:
   _titleSceneName: Title
   _levelNames:
   - Tutorial_1
+  - Tutorial_2
+  - Level_1
 --- !u!4 &1205923715
 Transform:
   m_ObjectHideFlags: 0
