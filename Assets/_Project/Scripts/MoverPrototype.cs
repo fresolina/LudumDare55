@@ -18,6 +18,7 @@ public class MoverPrototype : MonoBehaviour {
     private Animator _animator;
     private Collider2D _collider;
     private GameObject _ball;
+    LayerMask _layerMask = 1 << 0; // Default layer
 
     public void Start() {
         _animator = GetComponent<Animator>();
@@ -80,8 +81,8 @@ public class MoverPrototype : MonoBehaviour {
         var bounds = _collider.bounds;
         var left_corner = new Vector2(bounds.min.x, bounds.min.y + 0.1f);
         var right_corner = new Vector2(bounds.max.x, bounds.min.y + 0.1f);
-        var left = Physics2D.Raycast(left_corner, Vector2.down, 1.0f);
-        var right = Physics2D.Raycast(right_corner, Vector2.down, 1.0f);
+        var left = Physics2D.Raycast(left_corner, Vector2.down, 1.0f, _layerMask);
+        var right = Physics2D.Raycast(right_corner, Vector2.down, 1.0f, _layerMask);
 
         if (left.collider != null)
             Debug.DrawLine(left_corner, left.point, Color.red);
@@ -105,8 +106,8 @@ public class MoverPrototype : MonoBehaviour {
     private Direction StuckestDirection() {
         // raycast left and right and find the direction with the closest distance
         var origin = transform.parent.position;
-        var left = Physics2D.Raycast(origin, Vector2.left, 2.0f);
-        var right = Physics2D.Raycast(origin, Vector2.right, 2.0f);
+        var left = Physics2D.Raycast(origin, Vector2.left, 2.0f, _layerMask);
+        var right = Physics2D.Raycast(origin, Vector2.right, 2.0f, _layerMask);
 
         if (left.collider != null)
             Debug.DrawLine(origin, left.point, Color.red);
